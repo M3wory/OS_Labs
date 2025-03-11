@@ -4,8 +4,8 @@
 #include <string>
 
 struct employee {
-    int num;
     char name[10];
+    int num;
     double hours;
 };
 

@@ -1,2 +1,0 @@
-add_executable(Reporter reporter.cpp)
-target_compile_features(Reporter PRIVATE cxx_std_11)
