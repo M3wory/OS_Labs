@@ -1,14 +1,6 @@
-﻿#include <windows.h>
+﻿#include "ThreadProcessing.h"
 #include <iostream>
 using namespace std;
-
-struct ThreadData {
-    int* array;
-    int size;
-    double average;
-    int min_index;
-    int max_index;
-};
 
 DWORD WINAPI MinMaxThread(LPVOID lpParam) {
     ThreadData* data = (ThreadData*)lpParam;
@@ -42,13 +34,13 @@ DWORD WINAPI AverageThread(LPVOID lpParam) {
 
     cout << "Average thread started\n";
 
-    double sum = 0;
+    int sum = 0;
     for (int i = 0; i < data->size; i++) {
         sum += data->array[i];
         Sleep(12);
     }
 
-    data->average = (double)sum / data->size;
+    data->average = sum / data->size;
 
     cout << "Average value: " << data->average << '\n';
 
